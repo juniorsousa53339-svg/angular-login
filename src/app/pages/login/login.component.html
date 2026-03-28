@@ -1,26 +1,50 @@
-<form (ngSubmit)="onSubmit()">
+<div class="container">
+  <div class="login-card">
 
-  <div class="input-group">
-    <label>Email</label>
-    <input 
-      type="email" 
-      [(ngModel)]="email" 
-      name="email"
-      placeholder="Digite seu email">
+    <div class="top">
+      <span class="back">← Voltar</span>
+    </div>
+
+    <div class="content">
+
+      <div class="brand">
+        ✂️
+        <span>Luciano Barbearia</span>
+      </div>
+
+      <h2>Bem-vindo de volta</h2>
+
+      <p class="subtitle">
+        Quer agendar seu horário? 
+        <span class="link">Cadastre-se</span>
+      </p>
+
+      <form (ngSubmit)="onSubmit()">
+
+        <input 
+          type="email" 
+          [(ngModel)]="email" 
+          name="email"
+          placeholder="Seu email">
+
+        <input 
+          type="password" 
+          [(ngModel)]="senha" 
+          name="senha"
+          placeholder="Sua senha">
+
+        <button type="submit">Entrar</button>
+
+        <p class="info">
+          Acesso exclusivo para funcionários ou proprietário
+        </p>
+
+        <p *ngIf="erro" class="erro">
+          {{ erro }}
+        </p>
+
+      </form>
+
+    </div>
   </div>
-
-  <div class="input-group">
-    <label>Senha</label>
-    <input 
-      type="password" 
-      [(ngModel)]="senha" 
-      name="senha"
-      placeholder="Digite sua senha">
-  </div>
-
-  <button type="submit">Entrar</button>
-  <p *ngIf="erro" style="color: red; text-align: center;">
-  {{ erro }}
-</p>
-
-</form>
+</div>

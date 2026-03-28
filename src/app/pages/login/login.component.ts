@@ -20,7 +20,7 @@ export class LoginComponent {
     if (this.email === 'admin@email.com' && this.senha === '123456') {
       alert('Login sucesso 🚀');
     } else {
-      this.erro = 'Email ou senha inválidos';
+     this.erro = "Credenciais incorretas. Verifique e tente novamente.";
     }
   }
 }
