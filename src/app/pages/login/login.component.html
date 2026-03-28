@@ -1,26 +1,39 @@
-<form (ngSubmit)="onSubmit()">
+<div class="login-page">
+  <div class="login-card">
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true">✂</div>
+      <h1>Luciano Dev</h1>
+      <p>Barbearia • Portal de Acesso</p>
+    </div>
 
-  <div class="input-group">
-    <label>Email</label>
-    <input 
-      type="email" 
-      [(ngModel)]="email" 
-      name="email"
-      placeholder="Digite seu email">
+    <form class="login-form" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="seuemail@exemplo.com"
+          required
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="senha">Senha</label>
+        <input
+          id="senha"
+          type="password"
+          [(ngModel)]="senha"
+          name="senha"
+          placeholder="••••••"
+          required
+        />
+      </div>
+
+      <button type="submit">Entrar</button>
+
+      <p class="erro" *ngIf="erro">{{ erro }}</p>
+    </form>
   </div>
-
-  <div class="input-group">
-    <label>Senha</label>
-    <input 
-      type="password" 
-      [(ngModel)]="senha" 
-      name="senha"
-      placeholder="Digite sua senha">
-  </div>
-
-  <button type="submit">Entrar</button>
-  <p *ngIf="erro" style="color: red; text-align: center;">
-  {{ erro }}
-</p>
-
-</form>
+</div>
