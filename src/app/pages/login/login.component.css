@@ -12,22 +12,27 @@ body {
 
 /* CENTRAL */
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px; /*  evita grudar nas bordas no celular */
 }
 
 /* CARD */
 .login-card {
-  width: 900px;
-  height: 500px;
+  width: 90%;
+  max-width: 900px;
+  min-height: 500px;
+  height: auto;
   border-radius: 25px;
   background: radial-gradient(circle at 70% 30%, #2b2b2b, #0d0d0d);
   color: white;
   position: relative;
   display: flex;
+  padding: 20px;
 }
+
 
 /* TOPO */
 .top {
@@ -38,10 +43,8 @@ body {
 
 /* CONTEÚDO */
 .content {
-  margin: auto;
-  text-align: center;
   width: 100%;
-  max-width: 360px;
+  max-width: 400px;
 }
 
 /* MARCA */
@@ -128,4 +131,16 @@ input,
 button {
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .content {
+    max-width: 100%;
+  }
 }
